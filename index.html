@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+          integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="style.css">
+    <title>User Reviews</title>
+    <link rel="shortcut icon" type="image/png"
+          href="https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"/>
+</head>
+<body>
+<div class="topnav">
+    <a class="active" href="https://www.imdb.com/?ref_=nv_home" style="margin-left: 300px;"><img
+            src="https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"
+            style="width: 70px"></a>
+    <a class="active" href="#about"
+       style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; padding-top: 20px ;">Menu</a>
+    <input type="text" placeholder="Search IMDb"
+           style="padding-bottom: 15px ; padding-top: 15px;height: 5px; margin-top: 15px; width: 700px;">
+
+    <a class="right" href="#about" style="margin-right:300px ; padding-top: 20px">EN</a>
+    <a class="right" href="https://www.imdb.com/registration/signin?ref=nv_generic_lgin" style="padding-top: 20px">Sign
+        In</a>
+    <a class="right" href="https://www.imdb.com/list/watchlist?ref_=nv_usr_wl_all_0"
+       style="padding-top: 20px">Watchlist</a>
+    <a class="right"
+       href="https://pro.imdb.com/login/ap?u=/login/lwa&imdbPageAction=signUp&rf=cons_nb_hm&ref_=cons_nb_hm"><img
+            src="https://m.media-amazon.com/images/G/01/IMDbPro/images/IMDbPro_payments_2x.png"
+            style="width: 70px; padding-top: 3.5px;"></a>
+</div>
+
+<section class="bg-dark" id="comments">
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-lg-8">
+                <div class="card mb-4 bg">
+                    <div class="card-body">
+                        <h5 class="card-title">User reviews</h5>
+                        <hr>
+                        <div id="matchless">
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="mb-3"><b>Comment</b></h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name"
+                                               id="txtPersonName">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" placeholder="Your Comment"
+                                                  id="txtCommentContent"></textarea>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button type="submit" class="btn btn-primary" id="btnAddNewComment">Send
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">The Godfather</h5>
+                            <div id="comment-count"></div>
+
+                            <div class="film-comment-info">
+                                <a href="https://www.imdb.com/title/tt0068646/mediaviewer/rm632580096/?ref_=tt_ov_i"><img
+                                        class="sola-hiza"
+                                        src="https://media-cache.cinematerial.com/p/500x/yrs6dqjv/the-godfather-turkish-movie-poster.jpg?v=1456736225"
+                                        style="width: 200px; height: 300px; margin-left: 10px; "> </a>
+                                <div class="film-about">
+                                    <p><em> "The aging patriarch of an organized crime dynasty in postwar New York City
+                                        transfers control of his clandestine empire to his reluctant youngest son."</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <label class="switch" style="margin-left: 20px;">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <label>abc</label>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script>
+    let yorumListesi = [];
+    if (localStorage.getItem("yorumListesi") !== null) {
+        yorumListesi = JSON.parse(localStorage.getItem("yorumListesi"));
+    }
+
+    displayComments();
+
+    function displayComments() {
+
+        let matchless = document.getElementById("matchless");
+        matchless.innerHTML = "";
+
+        if (yorumListesi.length == 0) {
+            matchless.innerHTML = "<p><em>No Comment</em></p>"
+        } else {
+            for (let yorum of yorumListesi) {
+
+                let blockquote =
+                    `
+                        <blockquote class="border-bottom">
+                            <div class="float-end" >
+                                <div class="btn-group">
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" data-bs-title="Like" id="btnLike">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    </button>
+                                    <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" data-bs-title="Dislike">
+                                    <i class="fa fa-thumbs-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                                <div class="content">
+                                    <div class="text">
+                                        <h6 class="mb-0"><b>${yorum.kisiAdi}</b></h6>
+                                    </div>
+                                </div>
+                                    <div class="mt-3">
+                                            <p>${yorum.yorumIcerigi}</p>
+                                    </div>
+                        </blockquote>
+                    `;
+                matchless.insertAdjacentHTML("beforeend", blockquote);
+            }
+        }
+    }
+
+    commentCount();
+
+    function commentCount() {
+        let x = yorumListesi.length;
+        document.getElementById("comment-count").innerHTML = `<p class="mt-1 text-muted">${x} Comment</p>
+        `
+    };
+
+    document.querySelector("#btnAddNewComment").addEventListener("click", commentCount);
+    document.querySelector("#btnAddNewComment").addEventListener("click", newComment);
+    document.querySelector("#btnAddNewComment").addEventListener("keypress", function () {
+        if (event.key == "Enter") {
+            document.getElementById("#btnAddNewComment").click();
+        }
+    });
+
+    function newComment(event) {
+        let personInput = document.querySelector("#txtPersonName");
+        let commentInput = document.querySelector("#txtCommentContent");
+        if (commentInput.value == "" || personInput.value == "") {
+            alert("You must fill in all fields.");
+        } else {
+            yorumListesi.push({
+                "id": (yorumListesi.length + 1),
+                "kisiAdi": personInput.value,
+                "yorumIcerigi": commentInput.value
+            });
+            personInput.value = "";
+            commentInput.value = "";
+            localStorage.setItem("yorumListesi", JSON.stringify(yorumListesi));
+            commentCount();
+            displayComments();
+            event.preventDefault();
+        }
+    }
+
+</script>
+
+<script>
+    const request = new XMLHttpRequest();
+    request.open('GET', 'https://imdb-api.com/en/API/Title/k_55ndeo8q/tt0068646')
+    request.send();
+    request.addEventListener('load', function () {
+        const title = JSON.parse(this.responseText);
+        console.log(title.fullTitle)
+    });
+</script>
+
+<!-- <script>
+ 'use strict';
+
+const express = require('express');
+const app = express();
+
+app.get('/', function (req, res) {
+
+res.send('Merhaba Express');
+//res.send('<h1>Merhaba Express</h1>');
+
+});
+
+</script> -->
+</body>
+</html>
