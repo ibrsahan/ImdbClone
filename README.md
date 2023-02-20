@@ -1,6 +1,6 @@
 # ImdbClone
 
-This project is an IMDB clone website made using simple HTML, CSS, and JavaScript. The home page features a list that displays the primary features of a movie (title, poster image, cast, director, genre, year).
+This project is an IMDB clone website made using simple HTML, CSS, and JavaScript. The home page features a list that displays the primary features of a movie (title, poster image, trailer, cast, director, genre, year).
 
 Additionally, there is a page that displays user reviews. On this page, users can write comments on movies. Comments are displayed in cards that show the user's name and comment. Users can submit their comments using a form.
 
