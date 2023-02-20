@@ -139,11 +139,15 @@ body {
     
     margin:auto;
     }
-    .sola-hiza{
+
+.sola-hiza{
     float:left;
     padding:0 10px 10px 0;
     }
-    .film-about {
+
+.film-about {
        width:21em;
        }
-     
+.col-lg-4{
+    float: right;
+}
