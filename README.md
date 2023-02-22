@@ -20,7 +20,9 @@ To use this project, you can follow these steps:
 
 # Screenshots
 
-![3](https://user-images.githubusercontent.com/121201456/220175235-07882392-57be-477c-954d-f3a8c9480868.PNG) ![1](https://user-images.githubusercontent.com/121201456/220175274-ce6dd4f5-1b0a-4dbb-adad-7ac520c67180.PNG) ![2](https://user-images.githubusercontent.com/121201456/220175419-9f9c618a-2124-4b8b-b7c6-9f0fa32d4cae.PNG)
+<img src="https://user-images.githubusercontent.com/121201456/220175235-07882392-57be-477c-954d-f3a8c9480868.PNG" height="500">
+<img src="https://user-images.githubusercontent.com/121201456/220175274-ce6dd4f5-1b0a-4dbb-adad-7ac520c67180.PNG" height="500">
+<img src="https://user-images.githubusercontent.com/121201456/220175419-9f9c618a-2124-4b8b-b7c6-9f0fa32d4cae.PNG" height="500">
 
 
 
